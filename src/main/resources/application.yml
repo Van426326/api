@@ -1,0 +1,17 @@
+server:
+  port: 10426
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: gaofan.1994
+    url: jdbc:mysql://localhost:3306/api?characterEncoding=utf8&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+  thymeleaf:
+    # 配置视图路径前缀
+    prefix: classpath:/templates/
+    # 配置视图路径后缀
+    suffix: .html
+    mode: html
+    # 关闭缓存 修改视图 刷新浏览器就显示 开发阶段务必关闭缓存 (=false)
+    cache: false

@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <title>新闻</title>
 </head>
 <link>
 
 <div class="container col-md-8">
     <div th:each="news : ${newsResponse.getResult().getData()}">
-        <div th:text="${news.title}">标题</div>
-        <div th:text="${news.date}" class="text-right">日期</div>
-<!--        <div th:text="${news.category}">类别</div>-->
-<!--        <div th:text="${news.author_name}">作者</div>-->
-        <div><a th:href="${news.url}">详情</a></div>
-        <div><img class="img" th:src="${news.thumbnail_pic_s}"/></div>
+        <div class="card">
+            <div class="card-header"><div th:text="${news.title}" class="h5"></div></div>
+            <img class="card-img-top" th:src="${news.thumbnail_pic_s}" alt="Card image" style="width:100%">
+            <div class="card-body text-right">
+                <a th:href="${news.url}" class="card-link" role="button">查看详情 >></a>
+            </div>
+            <div class="card-footer text-right">
+                <div th:text="${news.date}">日期</div>
+            </div>
+        </div>
     </div>
 </div>
 <!--引入BootsStrap样式-->

@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <title>历史上的今天</title>
 </head>
 <body>
-    <div>aaa</div>
+    <div class="container col-md-8">
+        <div th:each="today : ${todayResponse.getResult()}">
+            <div class="card">
+                <div class="card-header"><div th:text="${today.title}" class="h5"></div></div>
+                <img class="card-img-top" th:src="${today.pic}" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <div class="" th:text="${today.des}"></div>
+                </div>
+                <div class="card-footer text-right">
+                    <div th:text="${today.year} + 年 + ${today.month} + 月 + ${today.day} + 日"></div>
+                    <div th:text="${today.lunar}">农历</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--引入BootsStrap样式-->
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/bootstrap.css}"></link>
+    <!--引入js文件-->
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script th:src="@{/static/js/bootstrap.js}"></script>
 </body>
 </html>

@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <title>天气</title>
 </head>
 <body>
-    <div>aaa</div>
+<div class="container col-md-8">
+
+    <div class="card bg-light text-dark">
+        <div class="card-header">
+            <div th:text="${weatherResponse.getResult().getCity()}" class="h5"></div>
+        </div>
+        <div class="card-body">
+            <div class="form-inline h-25">
+                <div class="form-group w-50">温度:</div>
+                <div class="form-group w-50 text-right" th:text="${weatherResponse.getResult().getRealtime().getTemperature()}"></div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group w-50">湿度:</div>
+                <div class="form-group w-50 text-right" th:text="${weatherResponse.getResult().getRealtime().getHumidity()}"></div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group w-50">天气:</div>
+                <div class="form-group w-50 text-right" th:text="${weatherResponse.getResult().getRealtime().getInfo()}"></div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group w-50">风向:</div>
+                <div class="form-group w-50 text-right" th:text="${weatherResponse.getResult().getRealtime().getDirect()}"></div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group w-50">风力:</div>
+                <div class="form-group w-50 text-right" th:text="${weatherResponse.getResult().getRealtime().getPower()}"></div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group w-50">空气:</div>
+                <div class="form-group w-50 text-right" th:text="${weatherResponse.getResult().getRealtime().getAqi()}"></div>
+            </div>
+        </div>
+        <div class="card-footer text-right">
+            <p class="card-text" th:text="${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd HH:mm:ss')}"></p>
+        </div>
+    </div>
+
+</div>
+<!--引入BootsStrap样式-->
+<link rel="stylesheet" type="text/css" th:href="@{/static/css/bootstrap.css}"></link>
+<!--引入js文件-->
+<script th:src="@{/static/js/jquery.min.js}"></script>
+<script th:src="@{/static/js/bootstrap.js}"></script>
 </body>
 </html>

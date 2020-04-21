@@ -4,26 +4,24 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <title>新闻</title>
 </head>
-<link>
-
-<div class="container col-md-8">
-    <div th:each="news : ${newsResponse.getResult().getData()}">
-        <div class="card">
-            <div class="card-header"><div th:text="${news.title}" class="h5"></div></div>
-            <img class="card-img-top" th:src="${news.thumbnail_pic_s}" alt="Card image" style="width:100%">
-            <div class="card-body text-right">
-                <a th:href="${news.url}" class="card-link" role="button">查看详情 >></a>
-            </div>
-            <div class="card-footer text-right">
-                <div th:text="${news.date}">日期</div>
+    <div class="container col-md-8">
+        <div th:each="news : ${newsResponse.getResult().getData()}">
+            <div class="card">
+                <div class="card-header"><div th:text="${news.title}" class="h5"></div></div>
+                <img class="card-img-top" th:src="${news.thumbnail_pic_s}" alt="Card image" style="width:100%">
+                <div class="card-body text-right">
+                    <a th:href="${news.url}" class="card-link" role="button">查看详情 >></a>
+                </div>
+                <div class="card-footer text-right">
+                    <div th:text="${news.date}">日期</div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!--引入BootsStrap样式-->
-<link rel="stylesheet" type="text/css" th:href="@{/static/css/bootstrap.css}"></link>
-<!--引入js文件-->
-<script th:src="@{/static/js/jquery.min.js}"></script>
-<script th:src="@{/static/js/bootstrap.js}"></script>
+    <!--引入BootsStrap样式-->
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/bootstrap.css}"></link>
+    <!--引入js文件-->
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script th:src="@{/static/js/bootstrap.js}"></script>
 </body>
 </html>

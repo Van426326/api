@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <title>新闻</title>
 </head>
-<body>
-<tr th:each="news : ${newsResponse.getResult().getData()}">
-    <td th:text="${news.title}">标题</td>
-    <td th:text="${news.date}">日期</td>
-    <td th:text="${news.category}">类别</td>
-    <td th:text="${news.author_name}">作者</td>
-    <td><a th:herf="${news.url}">详情</a></td>
-    <td><img class="img" th:src="${news.thumbnail_pic_s}"/></td>
-    <td><img class="img" th:src="${news.thumbnail_pic_s02}"/></td>
-    <td><img class="img" th:src="${news.thumbnail_pic_s03}"/></td>
-</tr>
+<link>
+
+<div class="container col-md-8">
+    <div th:each="news : ${newsResponse.getResult().getData()}">
+        <div th:text="${news.title}">标题</div>
+        <div th:text="${news.date}" class="text-right">日期</div>
+<!--        <div th:text="${news.category}">类别</div>-->
+<!--        <div th:text="${news.author_name}">作者</div>-->
+        <div><a th:href="${news.url}">详情</a></div>
+        <div><img class="img" th:src="${news.thumbnail_pic_s}"/></div>
+    </div>
+</div>
+<!--引入BootsStrap样式-->
+<link rel="stylesheet" type="text/css" th:href="@{/static/css/bootstrap.css}"></link>
+<!--引入js文件-->
+<script th:src="@{/static/js/jquery.min.js}"></script>
+<script th:src="@{/static/js/bootstrap.js}"></script>
 </body>
 </html>

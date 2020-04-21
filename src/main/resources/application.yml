@@ -8,10 +8,14 @@ spring:
     password: gaofan.1994
     url: jdbc:mysql://localhost:3306/api?characterEncoding=utf8&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
   thymeleaf:
-    # ÅäÖÃÊÓÍ¼Â·¾¶Ç°×º
+    # é…ç½®è§†å›¾è·¯å¾„å‰ç¼€
     prefix: classpath:/templates/
-    # ÅäÖÃÊÓÍ¼Â·¾¶ºó×º
+    # é…ç½®è§†å›¾è·¯å¾„åç¼€
     suffix: .html
     mode: html
-    # ¹Ø±Õ»º´æ ĞŞ¸ÄÊÓÍ¼ Ë¢ĞÂä¯ÀÀÆ÷¾ÍÏÔÊ¾ ¿ª·¢½×¶ÎÎñ±Ø¹Ø±Õ»º´æ (=false)
+    # å…³é—­ç¼“å­˜ ä¿®æ”¹è§†å›¾ åˆ·æ–°æµè§ˆå™¨å°±æ˜¾ç¤º å¼€å‘é˜¶æ®µåŠ¡å¿…å…³é—­ç¼“å­˜ (=false)
     cache: false
+  mvc:
+    static-path-pattern: /static/**    #é™æ€èµ„æºçš„è¯·æ±‚æ–¹å¼
+  resources:
+    static-locations: classpath:/static/

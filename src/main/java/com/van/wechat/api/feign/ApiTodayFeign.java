@@ -1,6 +1,5 @@
 package com.van.wechat.api.feign;
 
-import com.van.wechat.api.dto.TodayResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

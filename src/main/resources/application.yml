@@ -5,8 +5,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: gaofan.1994
-    url: jdbc:mysql://localhost:3306/api?characterEncoding=utf8&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    password: Gaofan.1994
+    url: jdbc:mysql://139.196.39.237:3306/api?characterEncoding=utf8&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
   thymeleaf:
     # 配置视图路径前缀
     prefix: classpath:/templates/
